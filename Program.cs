@@ -38,46 +38,7 @@
 // [3, 7, 23, 12] -> 19
 // [-4, -6, 89, 6] -> 0
 
-// void findSumNumberOnOddPosition()
-// {
-//     // Создаём массив из случайных и случайного размера
-
-//     //Задаём случайны размер
-//     int size = new Random().Next(5, 10); 
-//     int [] myArray = new int [size];
-
-//     // Задаём массив
-//     Console.Write("Массив -> ");
-//     for (int i = 0; i < size; i++)
-//     {
-//         myArray[i] = new Random().Next(1, 100);
-//     }
-    
-//     // Отображаем массив
-//     for (int i = 0; i < size; i++)
-//     {
-//         Console.Write($" {myArray[i] + ", "} ");
-//     }
-//     Console.WriteLine();
-
-//     // Сумма элементов на чётных ппзициях
-//     int sum = 0;
-//     for (int i = 1; i < size; i++) // Счёт начинаем с позиции 1
-//     {
-//         if (i % 2 == 0) sum += myArray[i];
-
-//     }
-//     Console.WriteLine($"Сумма чётных элементов {sum}");
-// }
-
-// findSumNumberOnOddPosition();
-
-
-// Задача 38: Задайте массив вещественных чисел. Найдите разницу между максимальным и минимальным элементов массива.
-
-// [3 7 22 2 78] -> 76
-
-int[] CreatArray()
+void findSumNumberOnOddPosition()
 {
     // Создаём массив из случайных и случайного размера
 
@@ -95,24 +56,68 @@ int[] CreatArray()
     // Отображаем массив
     for (int i = 0; i < size; i++)
     {
-        Console.Write($" {myArray[i] + ","}");
+        Console.Write($" {myArray[i] + ", "} ");
     }
     Console.WriteLine();
-    return myArray;   
-}
 
-void findSumMinAndMaxNumberInArray(int[] array)
-{
-    // ищем максимальное и минмальное число
-    int max = 0;
-    int min = array[0];
-    for (int i = 0; i < array.Length; i++)
+    // Сумма элементов на позициях
+    int sumOdd = 0; // Сумма на чётных позициях
+    int sumNotOdd = 0; // Сумма на нечётных элементов
+    for (int i = 1; i < size; i++) // Счёт начинаем с позиции 1
     {
-        if (array[i] > max) max = array[i];
-        if (array[i] < min) min = array[i];
-    }
-    int subtraction = max - min; // разница
-    Console.WriteLine($"{max} - {min} = {subtraction}");
-}
+        if (i % 2 == 0)
+        {
+            sumOdd += myArray[i]; // сумма четных
+        }
+        sumNotOdd += myArray[i]; // сумма нечетных чисел
 
-findSumMinAndMaxNumberInArray(CreatArray());
+
+    }
+    Console.WriteLine($"Сумма чётных элементов {sumOdd} и нечётных элементов {sumNotOdd}");
+}
+findSumNumberOnOddPosition();
+
+
+// Задача 38: Задайте массив вещественных чисел. Найдите разницу между максимальным и минимальным элементов массива.
+
+// [3 7 22 2 78] -> 76
+
+// int[] CreatArray()
+// {
+//     // Создаём массив из случайных и случайного размера
+
+//     //Задаём случайны размер
+//     int size = new Random().Next(5, 10); 
+//     int [] myArray = new int [size];
+
+//     // Задаём массив
+//     Console.Write("Массив -> ");
+//     for (int i = 0; i < size; i++)
+//     {
+//         myArray[i] = new Random().Next(1, 100);
+//     }
+    
+//     // Отображаем массив
+//     for (int i = 0; i < size; i++)
+//     {
+//         Console.Write($" {myArray[i] + ","}");
+//     }
+//     Console.WriteLine();
+//     return myArray;   
+// }
+
+// void findSumMinAndMaxNumberInArray(int[] array)
+// {
+//     // ищем максимальное и минмальное число
+//     int max = 0;
+//     int min = array[0];
+//     for (int i = 0; i < array.Length; i++)
+//     {
+//         if (array[i] > max) max = array[i];
+//         if (array[i] < min) min = array[i];
+//     }
+//     int subtraction = max - min; // разница
+//     Console.WriteLine($"{max} - {min} = {subtraction}");
+// }
+
+// findSumMinAndMaxNumberInArray(CreatArray());
