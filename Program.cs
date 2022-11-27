@@ -106,7 +106,7 @@ int[] CreatArray()
     return myArray;   
 }
 
-void findSumMinAndMaxNumberInArray(int[] array)
+void findSubstractionMinAndMaxNumberInArray(int[] array)
 {
     // ищем максимальное и минмальное число
     int max = 0;
@@ -122,4 +122,4 @@ void findSumMinAndMaxNumberInArray(int[] array)
     if (min >= 0) Console.WriteLine($"{max} - {min} = {subtraction}");
 }
 
-findSumMinAndMaxNumberInArray(CreatArray());
+findSubstractionMinAndMaxNumberInArray(CreatArray());
